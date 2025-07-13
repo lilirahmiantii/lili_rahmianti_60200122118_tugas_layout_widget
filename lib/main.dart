@@ -45,12 +45,30 @@ class _ProfessionalProfilePageV2State extends State<ProfessionalProfilePageV2>
   late TabController _tabController;
 
   final List<PortfolioItem> portfolioItems = [
-    PortfolioItem(imageUrl: 'https://picsum.photos/seed/lily1/400/500', title: 'Stargazer Array'),
-    PortfolioItem(imageUrl: 'https://picsum.photos/seed/lily2/400/500', title: 'Morning Dew'),
-    PortfolioItem(imageUrl: 'https://picsum.photos/seed/lily3/400/500', title: 'Sunset Petals'),
-    PortfolioItem(imageUrl: 'https://picsum.photos/seed/lily4/400/500', title: 'Pink Elegance'),
-    PortfolioItem(imageUrl: 'https://picsum.photos/seed/lily5/400/500', title: 'Garden Dream'),
-    PortfolioItem(imageUrl: 'https://picsum.photos/seed/lily6/400/500', title: 'White Purity'),
+    PortfolioItem(
+      imageUrl: 'https://picsum.photos/seed/lily1/400/500',
+      title: 'Stargazer Array',
+    ),
+    PortfolioItem(
+      imageUrl: 'https://picsum.photos/seed/lily2/400/500',
+      title: 'Morning Dew',
+    ),
+    PortfolioItem(
+      imageUrl: 'https://picsum.photos/seed/lily3/400/500',
+      title: 'Sunset Petals',
+    ),
+    PortfolioItem(
+      imageUrl: 'https://picsum.photos/seed/lily4/400/500',
+      title: 'Pink Elegance',
+    ),
+    PortfolioItem(
+      imageUrl: 'https://picsum.photos/seed/lily5/400/500',
+      title: 'Garden Dream',
+    ),
+    PortfolioItem(
+      imageUrl: 'https://picsum.photos/seed/lily6/400/500',
+      title: 'White Purity',
+    ),
   ];
 
   @override
@@ -73,7 +91,10 @@ class _ProfessionalProfilePageV2State extends State<ProfessionalProfilePageV2>
         backgroundColor: Colors.black87,
         foregroundColor: Colors.white,
         icon: const Icon(Icons.add),
-        label: Text("Hire Me", style: GoogleFonts.inter(fontWeight: FontWeight.w600)),
+        label: Text(
+          "Hire Me",
+          style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+        ),
       ),
       body: CustomScrollView(
         slivers: [
@@ -123,7 +144,10 @@ class _ProfessionalProfilePageV2State extends State<ProfessionalProfilePageV2>
         title: Text(
           'Lili Rahmianti',
           style: GoogleFonts.inter(
-              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16.0),
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 16.0,
+          ),
         ),
         background: Stack(
           fit: StackFit.expand,
@@ -171,7 +195,8 @@ class _ProfessionalProfilePageV2State extends State<ProfessionalProfilePageV2>
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0), // Memberi jarak/bingkai
-                    child: ClipRRect( // Membuat sudut gambar tumpul
+                    child: ClipRRect(
+                      // Membuat sudut gambar tumpul
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.network(
                         item.imageUrl,
@@ -183,9 +208,16 @@ class _ProfessionalProfilePageV2State extends State<ProfessionalProfilePageV2>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(12.0, 0, 12.0, 12.0), // Padding diatur ulang
-                  child: Text(item.title,
-                      style: GoogleFonts.inter(fontWeight: FontWeight.w600)),
+                  padding: const EdgeInsets.fromLTRB(
+                    12.0,
+                    0,
+                    12.0,
+                    12.0,
+                  ), // Padding diatur ulang
+                  child: Text(
+                    item.title,
+                    style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+                  ),
                 ),
               ],
             ),
@@ -201,7 +233,10 @@ class _ProfessionalProfilePageV2State extends State<ProfessionalProfilePageV2>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('About Me', style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold)),
+          Text(
+            'About Me',
+            style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
           const SizedBox(height: 12),
           const Text(
             'Lili Rahmianti is a passionate florist and botanical stylist based in Jakarta. With a deep love for nature\'s artistry, she specializes in creating breathtaking floral arrangements that tell a story and evoke emotion.',
@@ -211,7 +246,10 @@ class _ProfessionalProfilePageV2State extends State<ProfessionalProfilePageV2>
             padding: EdgeInsets.symmetric(vertical: 24.0),
             child: Divider(),
           ),
-          Text('Specialties', style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold)),
+          Text(
+            'Specialties',
+            style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
           const SizedBox(height: 12),
           _buildInfoTile(Icons.eco_outlined, 'Sustainable Floristry'),
           _buildInfoTile(Icons.celebration_outlined, 'Event & Wedding Styling'),
@@ -220,14 +258,17 @@ class _ProfessionalProfilePageV2State extends State<ProfessionalProfilePageV2>
       ),
     );
   }
-  
+
   Widget _buildContactTab() {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Get In Touch', style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold)),
+          Text(
+            'Get In Touch',
+            style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
           const SizedBox(height: 12),
           _buildInfoTile(Icons.email_outlined, 'lili.rahmianti@florist.com'),
           _buildInfoTile(Icons.phone_outlined, '+62 812 3456 7890'),
@@ -259,7 +300,11 @@ class _SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   double get maxExtent => _tabBar.preferredSize.height;
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -268,6 +313,7 @@ class _SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
       child: _tabBar,
     );
   }
+
   @override
   bool shouldRebuild(_SliverTabBarDelegate oldDelegate) => false;
 }
@@ -310,7 +356,9 @@ class _AnimatedCardState extends State<AnimatedCard> {
           elevation: 4,
           clipBehavior: Clip.antiAlias,
           shadowColor: Colors.black26,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
           child: widget.child,
         ),
       ),
